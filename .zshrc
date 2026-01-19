@@ -47,7 +47,7 @@ vmp() {
   done
 
   cc -Wall -Wextra -Werror -g "${files[@]}" "${cc_args[@]}" \
-    && valgrind --leak-check=full ./a.out "${run_args[@]}"
+    && valgrind --leak-check=full --track-origins=yes ./a.out "${run_args[@]}"
   rm -f ./a.out
 }
 
